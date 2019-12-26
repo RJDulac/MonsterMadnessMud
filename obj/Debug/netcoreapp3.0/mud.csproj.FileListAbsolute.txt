@@ -1,0 +1,11 @@
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud.deps.json
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud.runtimeconfig.json
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud.runtimeconfig.dev.json
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud.dll
+/home/machine/programming/csharp/mud/bin/Debug/netcoreapp3.0/mud.pdb
+/home/machine/programming/csharp/mud/obj/Debug/netcoreapp3.0/mud.csprojAssemblyReference.cache
+/home/machine/programming/csharp/mud/obj/Debug/netcoreapp3.0/mud.AssemblyInfoInputs.cache
+/home/machine/programming/csharp/mud/obj/Debug/netcoreapp3.0/mud.AssemblyInfo.cs
+/home/machine/programming/csharp/mud/obj/Debug/netcoreapp3.0/mud.dll
+/home/machine/programming/csharp/mud/obj/Debug/netcoreapp3.0/mud.pdb
