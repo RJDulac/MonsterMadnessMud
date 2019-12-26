@@ -19,10 +19,21 @@ namespace mud
             goblin.TakesDamage(30);
             Console.WriteLine(goblin.Health);
 
+            //player
+            Player player = new Player("", 100, 10);
             //Console.WriteLine(bestiary[1].Name);
             while (playing == true)
             {
-                Player player = new Player("", 100, 10);
+                StartScreen();
+
+                player.DamageTaken(10);
+
+                Console.WriteLine($"Your health is: {player.Health}");
+                PlayerDeath();
+
+            }
+            void StartScreen()
+            {
                 if (startScreen == true)
                 {
 
@@ -37,17 +48,18 @@ namespace mud
                     //more semantic than break;
                     startScreen = false;
                 }
-                player.DamageTaken(10);
-
-                Console.WriteLine($"Your health is: {player.Health}");
+            }
+            void PlayerDeath()
+            {
                 if (player.Health <= 0)
                 {
                     Console.WriteLine("Game ended");
-                    //temp break
-                    break;
-                }
 
+                    playing = false;
+                }
             }
+
         }
+
     }
 }
