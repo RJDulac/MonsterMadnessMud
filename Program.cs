@@ -11,13 +11,18 @@ namespace mud
 
             Monsters goblin = new Monsters("Goblin", 40, 5);
             Monsters orc = new Monsters("Orc", 10, 15);
+            Monsters skeleton = new Monsters("Skeleton", 5, 3);
 
-            Monsters[] bestiary = { goblin, orc };
+            Monsters[] bestiary = { goblin, orc, skeleton };
             //Console.WriteLine(bestiary[1].Health);
+
+
+            Bestiary();
 
             Console.WriteLine(goblin.Health);
             goblin.TakesDamage(30);
             Console.WriteLine(goblin.Health);
+
 
             //player
             Player player = new Player("", 100, 10);
@@ -26,10 +31,12 @@ namespace mud
             {
                 StartScreen();
 
+
                 player.DamageTaken(10);
 
                 Console.WriteLine($"Your health is: {player.Health}");
                 PlayerDeath();
+
 
             }
             void StartScreen()
@@ -38,7 +45,7 @@ namespace mud
                 {
 
                     Console.WriteLine("Game Started \n press any key to play");
-                    //creat player
+                    //create player
                     Console.WriteLine("Choose your name!");
                     string input = Console.ReadLine();
                     player.NamePlayer(input);
@@ -56,6 +63,14 @@ namespace mud
                     Console.WriteLine("Game ended");
 
                     playing = false;
+                }
+            }
+            void Bestiary()
+            {
+                //list all monsters - list stats later
+                foreach (Monsters monster in bestiary)
+                {
+                    Console.WriteLine(monster.Name);
                 }
             }
 

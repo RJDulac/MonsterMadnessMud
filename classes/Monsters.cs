@@ -13,9 +13,9 @@ class Monsters
         Damage = damage;
     }
 
-    public void TakesDamage(int num)
+    public int TakesDamage(int num)
     {
-        Health -= num;
+        return Health -= num;
     }
 
 }
