@@ -17,16 +17,25 @@ namespace mud
             //Console.WriteLine(bestiary[1].Health);
 
 
-            Bestiary();
+            DisplayBestiary();
 
             Console.WriteLine(goblin.Health);
             goblin.TakesDamage(30);
             Console.WriteLine(goblin.Health);
 
 
+
+
             //player
             Player player = new Player("", 100, 10);
             //Console.WriteLine(bestiary[1].Name);
+
+            player.PlayerInfo();
+            player.LevelUp();
+            player.PlayerInfo();
+            player.LevelUp();
+            player.PlayerInfo();
+
             while (playing == true)
             {
                 StartScreen();
@@ -65,7 +74,7 @@ namespace mud
                     playing = false;
                 }
             }
-            void Bestiary()
+            void DisplayBestiary()
             {
                 //list all monsters - list stats later
                 foreach (Monsters monster in bestiary)

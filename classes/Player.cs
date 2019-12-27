@@ -1,3 +1,4 @@
+using System;
 class Player
 {
     //fields
@@ -11,7 +12,7 @@ class Player
         get { return health; }
         set
         {
-            //do this for monster's health too
+            //do this for monster's health too -- use inheritance
             health = value;
             if (health <= 0)
             {
@@ -41,6 +42,15 @@ class Player
     public int SetPlayerHealth(int num)
     {
         return Health = num;
+    }
+    public void LevelUp()
+    {
+        Health += 20;
+        Damage += 2;
+    }
+    public void PlayerInfo()
+    {
+        Console.WriteLine($"Your name is {Name}, your health is {Health}, and you deal {Damage} damage.");
     }
 
 
