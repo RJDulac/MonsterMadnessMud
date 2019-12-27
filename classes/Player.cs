@@ -21,12 +21,15 @@ class Player
         }
     }
     public int Damage { get; private set; }
+    public int PlayerLevel { get; private set; }
 
     public Player(string name, int health, int damage)
     {
         Name = name;
         Health = health;
         Damage = damage;
+
+        PlayerLevel = 0;
 
     }
 
@@ -47,10 +50,11 @@ class Player
     {
         Health += 20;
         Damage += 2;
+        PlayerLevel += 1;
     }
     public void PlayerInfo()
     {
-        Console.WriteLine($"Your name is {Name}, your health is {Health}, and you deal {Damage} damage.");
+        Console.WriteLine($"Your name is {Name}, your health is {Health}, and you deal {Damage} damage. Your current level is {PlayerLevel}");
     }
 
 

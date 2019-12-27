@@ -43,7 +43,7 @@ namespace mud
 
                 player.DamageTaken(10);
 
-                Console.WriteLine($"Your health is: {player.Health}");
+                player.PlayerInfo();
                 PlayerDeath();
 
 
