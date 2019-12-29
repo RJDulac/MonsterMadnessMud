@@ -8,6 +8,8 @@ namespace mud
         {
             bool playing = true;
             bool startScreen = true;
+            //bool combat = true;
+            string playerStart = null;
 
             Monsters goblin = new Monsters("Goblin", 40, 5);
             Monsters orc = new Monsters("Orc", 10, 15);
@@ -38,10 +40,22 @@ namespace mud
 
             while (playing == true)
             {
+
+
+                //isStarted = playerStart == "yes" ? false : true;
                 StartScreen();
+                if (playerStart == "yes")
+                {
+                    Combat();
+                }
+                else
+                {
+                    startScreen = true;
+                }
 
 
-                Combat();
+
+
 
 
                 // player.TakesDamage(10);
@@ -79,7 +93,7 @@ namespace mud
                 if (startScreen == true)
                 {
 
-                    Console.WriteLine("Game Started \n press any key to play");
+                    Console.WriteLine("Game Started");
                     //create player
                     Console.WriteLine("Choose your name!");
                     string input = Console.ReadLine();
@@ -88,6 +102,8 @@ namespace mud
 
                     Console.WriteLine($"Your player name is: {player.Name} and stats are {player.Health} health and you deal {player.Damage} damage");
                     //more semantic than break;
+                    Console.WriteLine("Enter Yes to play!");
+                    playerStart = Console.ReadLine().ToLower();
                     startScreen = false;
                 }
             }
