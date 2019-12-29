@@ -41,7 +41,7 @@ namespace mud
                 StartScreen();
 
 
-                player.DamageTaken(10);
+                player.TakesDamage(10);
 
                 player.PlayerInfo();
                 PlayerDeath();

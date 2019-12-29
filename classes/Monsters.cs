@@ -1,21 +1,9 @@
 
-class Monsters
+class Monsters : Beings
 {
-    public string Name { get; private set; }
-    public int Health { get; private set; }
-    public int Damage { get; private set; }
-
-
-    public Monsters(string name, int health, int damage)
+    public Monsters(string name, int health, int damage) : base(name, health, damage)
     {
-        Name = name;
-        Health = health;
-        Damage = damage;
-    }
 
-    public int TakesDamage(int num)
-    {
-        return Health -= num;
     }
 
 }
