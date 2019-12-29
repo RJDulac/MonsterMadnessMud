@@ -17,11 +17,11 @@ namespace mud
             //Console.WriteLine(bestiary[1].Health);
 
 
-            DisplayBestiary();
+            // DisplayBestiary();
 
-            Console.WriteLine(goblin.Health);
-            goblin.TakesDamage(30);
-            Console.WriteLine(goblin.Health);
+            // Console.WriteLine(goblin.Health);
+            // goblin.TakesDamage(30);
+            // Console.WriteLine(goblin.Health);
 
 
 
@@ -30,21 +30,47 @@ namespace mud
             Player player = new Player("", 100, 10);
             //Console.WriteLine(bestiary[1].Name);
 
-            player.PlayerInfo();
-            player.LevelUp();
-            player.PlayerInfo();
-            player.LevelUp();
-            player.PlayerInfo();
+            // player.PlayerInfo();
+            // player.LevelUp();
+            // player.PlayerInfo();
+            // player.LevelUp();
+            // player.PlayerInfo();
 
             while (playing == true)
             {
                 StartScreen();
 
 
-                player.TakesDamage(10);
+                Combat();
 
-                player.PlayerInfo();
+
+                // player.TakesDamage(10);
+
+                // player.PlayerInfo();
                 PlayerDeath();
+
+            }
+            void Combat()
+            {
+                bool combatPlaying = true;
+                bool playerTurn = true;
+
+                while (combatPlaying == true)
+                {
+                    if (playerTurn == true)
+                    {
+                        Console.WriteLine("Player's turn");
+                        Console.ReadLine();
+                        playerTurn = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Monster's turn");
+                        Console.ReadLine();
+                        playerTurn = true;
+
+                    }
+                }
 
 
             }

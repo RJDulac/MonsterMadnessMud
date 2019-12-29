@@ -7,7 +7,6 @@ public abstract class Beings
         get { return health; }
         protected set
         {
-            //do this for monster's health too -- use inheritance
             health = value;
             if (health <= 0)
             {
