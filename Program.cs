@@ -1,9 +1,13 @@
 ﻿using System;
 
 namespace mud
+
+
 {
+
     class Program
     {
+
         static void Main(string[] args)
         {
             bool playing = true;
@@ -16,33 +20,12 @@ namespace mud
             Monsters skeleton = new Monsters("Skeleton", 5, 3);
 
             Monsters[] bestiary = { goblin, orc, skeleton };
-            //Console.WriteLine(bestiary[1].Health);
-
-
-            // DisplayBestiary();
-
-            // Console.WriteLine(goblin.Health);
-            // goblin.TakesDamage(30);
-            // Console.WriteLine(goblin.Health);
-
-
-
 
             //player
             Player player = new Player("", 100, 10);
-            //Console.WriteLine(bestiary[1].Name);
-
-            // player.PlayerInfo();
-            // player.LevelUp();
-            // player.PlayerInfo();
-            // player.LevelUp();
-            // player.PlayerInfo();
 
             while (playing == true)
             {
-
-
-                //isStarted = playerStart == "yes" ? false : true;
                 StartScreen();
                 if (playerStart == "yes")
                 {
@@ -52,17 +35,7 @@ namespace mud
                 {
                     startScreen = true;
                 }
-
-
-
-
-
-
-                // player.TakesDamage(10);
-
-                // player.PlayerInfo();
                 PlayerDeath();
-
             }
             void Combat()
             {
@@ -82,11 +55,8 @@ namespace mud
                         Console.WriteLine("Monster's turn");
                         Console.ReadLine();
                         playerTurn = true;
-
                     }
                 }
-
-
             }
             void StartScreen()
             {
@@ -97,7 +67,7 @@ namespace mud
                     //create player
                     Console.WriteLine("Choose your name!");
                     string input = Console.ReadLine();
-                    player.NamePlayer(input);
+                    player.GiveName(input);
 
 
                     Console.WriteLine($"Your player name is: {player.Name} and stats are {player.Health} health and you deal {player.Damage} damage");
@@ -105,6 +75,14 @@ namespace mud
                     Console.WriteLine("Enter Yes to play!");
                     playerStart = Console.ReadLine().ToLower();
                     startScreen = false;
+                }
+            }
+            void DisplayBestiary()
+            {
+                //list all monsters - list stats later
+                foreach (Monsters monster in bestiary)
+                {
+                    Console.WriteLine(monster.Name);
                 }
             }
             void PlayerDeath()
@@ -116,15 +94,6 @@ namespace mud
                     playing = false;
                 }
             }
-            void DisplayBestiary()
-            {
-                //list all monsters - list stats later
-                foreach (Monsters monster in bestiary)
-                {
-                    Console.WriteLine(monster.Name);
-                }
-            }
-
         }
 
     }

@@ -10,16 +10,6 @@ class Player : Beings
     {
         PlayerLevel = 0;
     }
-
-    public string NamePlayer(string name)
-    {
-        Name = name;
-        return Name;
-    }
-    public int SetPlayerHealth(int num)
-    {
-        return Health = num;
-    }
     public void LevelUp()
     {
         Health += 20;
@@ -30,7 +20,6 @@ class Player : Beings
     {
         Console.WriteLine($"Your name is {Name}, your health is {Health}, and you deal {Damage} damage. Your current level is {PlayerLevel}");
     }
-
 
 
 }

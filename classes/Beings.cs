@@ -28,4 +28,13 @@ public abstract class Beings
     {
         return Health -= num;
     }
+    public string GiveName(string name)
+    {
+        Name = name;
+        return Name;
+    }
+    public int SetHealth(int num)
+    {
+        return Health = num;
+    }
 }
