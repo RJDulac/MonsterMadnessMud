@@ -16,8 +16,8 @@ namespace mud
             string playerStart = null;
 
             Monsters goblin = new Monsters("Goblin", 40, 5);
-            Monsters orc = new Monsters("Orc", 10, 15);
-            Monsters skeleton = new Monsters("Skeleton", 5, 3);
+            Monsters orc = new Monsters("Orc", 50, 15);
+            Monsters skeleton = new Monsters("Skeleton", 50, 3);
 
             Monsters[] bestiary = { goblin, orc, skeleton };
 
@@ -26,9 +26,12 @@ namespace mud
 
             while (playing == true)
             {
+
+
                 StartScreen();
                 if (playerStart == "yes")
                 {
+
                     Combat();
                 }
                 else
@@ -41,20 +44,42 @@ namespace mud
             {
                 bool combatPlaying = true;
                 bool playerTurn = true;
-
+                Random rnd = new Random();
+                Monsters selectedMonster = bestiary[rnd.Next(bestiary.Length)];
+                int monsterFullHealth = selectedMonster.Health;
+                Console.WriteLine($"{selectedMonster.Name} appears!");
                 while (combatPlaying == true)
                 {
+
+
                     if (playerTurn == true)
                     {
                         Console.WriteLine("Player's turn");
+                        Console.WriteLine($"You attack {selectedMonster.Name} for {player.Damage} damage!");
+                        selectedMonster.TakesDamage(player.Damage);
+                        Console.WriteLine($"{selectedMonster.Name} is left with {selectedMonster.Health} health!");
                         Console.ReadLine();
                         playerTurn = false;
                     }
                     else
                     {
                         Console.WriteLine("Monster's turn");
+                        Console.WriteLine($"{selectedMonster.Name} attacks you for {selectedMonster.Damage} damage!");
+                        player.TakesDamage(selectedMonster.Damage);
+                        Console.WriteLine($"You have {player.Health} health left!");
                         Console.ReadLine();
                         playerTurn = true;
+                    }
+                    if (selectedMonster.Health == 0)
+                    {
+                        selectedMonster.SetHealth(monsterFullHealth);
+                        Console.WriteLine($"You have slain {selectedMonster.Name}!");
+                        combatPlaying = false;
+                    }
+                    if (player.Health == 0)
+                    {
+                        Console.WriteLine("You died!");
+                        combatPlaying = false;
                     }
                 }
             }
