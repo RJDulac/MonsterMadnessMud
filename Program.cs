@@ -22,8 +22,7 @@ namespace mud
             Monsters[] bestiary = { goblin, orc, skeleton };
 
             //player
-            Player player = new Player("", 100, 10);
-
+            Player player = new Player("");
             while (playing == true)
             {
 

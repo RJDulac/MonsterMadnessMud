@@ -17,11 +17,10 @@ public abstract class Beings
     public int Damage { get; protected set; }
 
 
-    protected Beings(string name, int health, int damage)
+    protected Beings(string name)
     {
         Name = name;
-        Health = health;
-        Damage = damage;
+
     }
 
     public int TakesDamage(int num)
@@ -37,4 +36,6 @@ public abstract class Beings
     {
         return Health = num;
     }
+    public abstract void Info();
+
 }
