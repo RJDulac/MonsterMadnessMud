@@ -18,8 +18,8 @@ namespace mud
             Monsters goblin = new Monsters("Goblin", 40, 5);
             Monsters orc = new Monsters("Orc", 50, 15);
             Monsters skeleton = new Monsters("Skeleton", 50, 3);
-
-            Monsters[] bestiary = { goblin, orc, skeleton };
+            Monsters witch = new Monsters("Witch");
+            Monsters[] bestiary = { goblin, orc, skeleton, witch };
 
             //player
             Player player = new Player("");
