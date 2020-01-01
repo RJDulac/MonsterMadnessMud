@@ -45,7 +45,8 @@ public class Combat
             {
                 selectedMonster.SetHealth(monsterFullHealth);
                 Player.GoldReward(20);
-                Console.WriteLine($"You have slain {selectedMonster.Name} and earned 20 gold!");
+                Player.LevelUp();
+                Console.WriteLine($"You have slain {selectedMonster.Name}, earned 20 gold, and earned level {Player.PlayerLevel}!");
                 Player.Info();
                 combatPlaying = false;
             }
