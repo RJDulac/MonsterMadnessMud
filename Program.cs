@@ -17,12 +17,10 @@ namespace mud
 
             //player
             Player player = new Player("");
-            Bestiary mob = new Bestiary();
-            mob.DisplayBestiary();
+            Bestiary beasts = new Bestiary();
+            beasts.DisplayBestiary();
             while (playing == true)
             {
-
-
                 StartScreen();
                 if (playerStart == "yes")
                 {
@@ -40,7 +38,7 @@ namespace mud
                 bool combatPlaying = true;
                 bool playerTurn = true;
 
-                Monsters selectedMonster = mob.GetMonsters();
+                Monsters selectedMonster = beasts.GetMonsters();
                 int monsterFullHealth = selectedMonster.Health;
                 Console.WriteLine($"{selectedMonster.Name} appears!");
                 while (combatPlaying == true)
