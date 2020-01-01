@@ -16,14 +16,14 @@ namespace mud
             //monsters
             Bestiary beasts = new Bestiary();
             beasts.DisplayBestiary();
-            Combat combat = new Combat();
+            Combat combat = new Combat(beasts, player);
             while (playing == true)
             {
                 StartScreen();
                 if (playerStart == "yes")
                 {
 
-                    combat.Battle(beasts, player);
+                    combat.Battle();
                 }
                 else
                 {

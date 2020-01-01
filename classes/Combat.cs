@@ -1,12 +1,21 @@
 using System;
+//think needs to be static?
 public class Combat
 {
-    public void Battle(Bestiary beasts, Player player)
+    private Bestiary Beasts = new Bestiary();
+    private Player Player = new Player(" ");
+    public Combat(Bestiary beasts, Player player)
+    {
+        Beasts = beasts;
+        Player = player;
+
+    }
+    public void Battle()
     {
         bool combatPlaying = true;
         bool playerTurn = true;
 
-        Monsters selectedMonster = beasts.GetMonsters();
+        Monsters selectedMonster = Beasts.GetMonsters();
         int monsterFullHealth = selectedMonster.Health;
         Console.WriteLine($"{selectedMonster.Name} appears!");
         while (combatPlaying == true)
@@ -16,8 +25,8 @@ public class Combat
             if (playerTurn == true)
             {
                 Console.WriteLine("Player's turn");
-                Console.WriteLine($"You attack {selectedMonster.Name} for {player.Damage} damage!");
-                selectedMonster.TakesDamage(player.Damage);
+                Console.WriteLine($"You attack {selectedMonster.Name} for {Player.Damage} damage!");
+                selectedMonster.TakesDamage(Player.Damage);
                 Console.WriteLine($"{selectedMonster.Name} is left with {selectedMonster.Health} health!");
                 Console.ReadLine();
                 playerTurn = false;
@@ -26,8 +35,8 @@ public class Combat
             {
                 Console.WriteLine("Monster's turn");
                 Console.WriteLine($"{selectedMonster.Name} attacks you for {selectedMonster.Damage} damage!");
-                player.TakesDamage(selectedMonster.Damage);
-                Console.WriteLine($"You have {player.Health} health left!");
+                Player.TakesDamage(selectedMonster.Damage);
+                Console.WriteLine($"You have {Player.Health} health left!");
                 Console.ReadLine();
                 playerTurn = true;
             }
@@ -37,7 +46,7 @@ public class Combat
                 Console.WriteLine($"You have slain {selectedMonster.Name}!");
                 combatPlaying = false;
             }
-            if (player.Health == 0)
+            if (Player.Health == 0)
             {
                 Console.WriteLine("You died!");
                 combatPlaying = false;
