@@ -1,5 +1,5 @@
 using System;
-class Player : Beings
+public class Player : Beings
 {
 
 

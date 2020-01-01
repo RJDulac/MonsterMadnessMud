@@ -1,13 +1,9 @@
 ﻿using System;
-
 namespace mud
 
-
 {
-
     class Program
     {
-
         static void Main(string[] args)
         {
             bool playing = true;
@@ -17,15 +13,17 @@ namespace mud
 
             //player
             Player player = new Player("");
+            //monsters
             Bestiary beasts = new Bestiary();
             beasts.DisplayBestiary();
+            Combat combat = new Combat();
             while (playing == true)
             {
                 StartScreen();
                 if (playerStart == "yes")
                 {
 
-                    Combat();
+                    combat.Battle(beasts, player);
                 }
                 else
                 {
@@ -33,49 +31,7 @@ namespace mud
                 }
                 PlayerDeath();
             }
-            void Combat()
-            {
-                bool combatPlaying = true;
-                bool playerTurn = true;
 
-                Monsters selectedMonster = beasts.GetMonsters();
-                int monsterFullHealth = selectedMonster.Health;
-                Console.WriteLine($"{selectedMonster.Name} appears!");
-                while (combatPlaying == true)
-                {
-
-
-                    if (playerTurn == true)
-                    {
-                        Console.WriteLine("Player's turn");
-                        Console.WriteLine($"You attack {selectedMonster.Name} for {player.Damage} damage!");
-                        selectedMonster.TakesDamage(player.Damage);
-                        Console.WriteLine($"{selectedMonster.Name} is left with {selectedMonster.Health} health!");
-                        Console.ReadLine();
-                        playerTurn = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Monster's turn");
-                        Console.WriteLine($"{selectedMonster.Name} attacks you for {selectedMonster.Damage} damage!");
-                        player.TakesDamage(selectedMonster.Damage);
-                        Console.WriteLine($"You have {player.Health} health left!");
-                        Console.ReadLine();
-                        playerTurn = true;
-                    }
-                    if (selectedMonster.Health == 0)
-                    {
-                        selectedMonster.SetHealth(monsterFullHealth);
-                        Console.WriteLine($"You have slain {selectedMonster.Name}!");
-                        combatPlaying = false;
-                    }
-                    if (player.Health == 0)
-                    {
-                        Console.WriteLine("You died!");
-                        combatPlaying = false;
-                    }
-                }
-            }
             void StartScreen()
             {
                 if (startScreen == true)
