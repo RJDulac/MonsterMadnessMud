@@ -4,12 +4,15 @@ public class Combat
 {
     private Bestiary Beasts = new Bestiary();
     private Player Player = new Player(" ");
+    public Combat()
+    { }
     public Combat(Bestiary beasts, Player player)
     {
         Beasts = beasts;
         Player = player;
 
     }
+
     public void Battle()
     {
         bool combatPlaying = true;
@@ -20,8 +23,6 @@ public class Combat
         Console.WriteLine($"{selectedMonster.Name} appears!");
         while (combatPlaying == true)
         {
-
-
             if (playerTurn == true)
             {
                 Console.WriteLine("Player's turn");

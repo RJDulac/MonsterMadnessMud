@@ -8,7 +8,6 @@ namespace mud
         {
             bool playing = true;
             bool startScreen = true;
-            //bool combat = true;
             string playerStart = null;
 
             //player
@@ -45,7 +44,6 @@ namespace mud
 
 
                     Console.WriteLine($"Your player name is: {player.Name} and stats are {player.Health} health and you deal {player.Damage} damage");
-                    //more semantic than break;
                     Console.WriteLine("Enter Yes to play!");
                     playerStart = Console.ReadLine().ToLower();
                     startScreen = false;
