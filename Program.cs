@@ -18,7 +18,7 @@ namespace mud
             //player
             Player player = new Player("");
             Bestiary mob = new Bestiary();
-            mob.GetMonsters(true);
+            mob.DisplayBestiary();
             while (playing == true)
             {
 
