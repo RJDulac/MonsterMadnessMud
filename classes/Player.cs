@@ -22,7 +22,7 @@ public class Player : Beings
     }
     public override void Info()
     {
-        Console.WriteLine($"Your name is {Name}, your health is {Health}, and you deal {Damage} damage. Your current level is {PlayerLevel}. You have {Gold} gold!");
+        Console.WriteLine($"{Name}, your health is {Health}, and you deal {Damage} damage. Your current level is {PlayerLevel}. You have {Gold} gold!");
     }
     public void GoldReward(int num) => Gold += num;
     public void GoldLost(int num) => Gold -= num;

@@ -21,15 +21,24 @@ public class Combat
         Monsters selectedMonster = Beasts.GetMonsters();
         int monsterFullHealth = selectedMonster.Health;
         Console.WriteLine($"{selectedMonster.Name} appears!");
+        //store  
+        bool isShopping = false;
+        Shop shop = new Shop();
         while (combatPlaying == true)
         {
+            string input = "";
             if (playerTurn == true)
             {
                 Console.WriteLine("Player's turn");
                 Console.WriteLine($"You attack {selectedMonster.Name} for {Player.Damage} damage!");
                 selectedMonster.TakesDamage(Player.Damage);
                 Console.WriteLine($"{selectedMonster.Name} is left with {selectedMonster.Health} health!");
-                Console.ReadLine();
+                input = Console.ReadLine().ToLower();
+                if (input == "shop" || input == "s")
+                {
+                    isShopping = true;
+                    shop.Shopping(isShopping);
+                }
                 playerTurn = false;
             }
             else

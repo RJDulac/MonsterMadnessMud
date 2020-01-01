@@ -1,12 +1,13 @@
 using System;
 public class Monsters : Beings
 {
+
     public Monsters(string name, int health, int damage) : base(name)
     {
         Health = health;
         Damage = damage;
     }
-    public Monsters(string name) : this(name, 50, 5)
+    public Monsters(string name) : this(name, 60, 10)
     {
 
     }

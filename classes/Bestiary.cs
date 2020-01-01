@@ -8,11 +8,13 @@ public class Bestiary
     {
         Combat combat = new Combat();
 
-        Monsters goblin = new Monsters("Goblin", 40, rnd.Next(4, 10));
-        Monsters orc = new Monsters("Orc", 50, rnd.Next(3, 15));
-        Monsters skeleton = new Monsters("Skeleton", 50, rnd.Next(5, 11));
+        Monsters goblin = new Monsters("Goblin", 40, rnd.Next(7, 10));
+        Monsters orc = new Monsters("Orc", 50, rnd.Next(8, 15));
+        Monsters skeleton = new Monsters("Skeleton", 50, rnd.Next(9, 11));
+        Monsters dragon = new Monsters("Dragon", 100, rnd.Next(7, 12));
+        Monsters golem = new Monsters("Golem", 120, rnd.Next(4, 8));
         Monsters witch = new Monsters("Witch");
-        Monsters[] bestiary = { goblin, orc, skeleton, witch };
+        Monsters[] bestiary = { goblin, orc, skeleton, witch, dragon };
         return bestiary;
     }
     public Monsters GetMonsters()
