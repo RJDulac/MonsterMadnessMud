@@ -15,14 +15,10 @@ namespace mud
             //bool combat = true;
             string playerStart = null;
 
-            Monsters goblin = new Monsters("Goblin", 40, 5);
-            Monsters orc = new Monsters("Orc", 50, 15);
-            Monsters skeleton = new Monsters("Skeleton", 50, 3);
-            Monsters witch = new Monsters("Witch");
-            Monsters[] bestiary = { goblin, orc, skeleton, witch };
-
             //player
             Player player = new Player("");
+            Bestiary mob = new Bestiary();
+            mob.GetMonsters(true);
             while (playing == true)
             {
 
@@ -43,8 +39,8 @@ namespace mud
             {
                 bool combatPlaying = true;
                 bool playerTurn = true;
-                Random rnd = new Random();
-                Monsters selectedMonster = bestiary[rnd.Next(bestiary.Length)];
+
+                Monsters selectedMonster = mob.GetMonsters();
                 int monsterFullHealth = selectedMonster.Health;
                 Console.WriteLine($"{selectedMonster.Name} appears!");
                 while (combatPlaying == true)
@@ -99,14 +95,6 @@ namespace mud
                     Console.WriteLine("Enter Yes to play!");
                     playerStart = Console.ReadLine().ToLower();
                     startScreen = false;
-                }
-            }
-            void DisplayBestiary()
-            {
-                //list all monsters - list stats later
-                foreach (Monsters monster in bestiary)
-                {
-                    Console.WriteLine(monster.Name);
                 }
             }
             void PlayerDeath()

@@ -1,5 +1,5 @@
 using System;
-class Monsters : Beings
+public class Monsters : Beings
 {
     public Monsters(string name, int health, int damage) : base(name)
     {
