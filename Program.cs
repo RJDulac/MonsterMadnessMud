@@ -14,7 +14,7 @@ namespace mud
             Player player = new Player("");
             //monsters
             Bestiary beasts = new Bestiary();
-            beasts.DisplayBestiary();
+            //beasts.DisplayBestiary();
             Combat combat = new Combat(beasts, player);
             while (playing == true)
             {
@@ -43,7 +43,7 @@ namespace mud
                     player.GiveName(input);
 
 
-                    Console.WriteLine($"Your player name is: {player.Name} and stats are {player.Health} health and you deal {player.Damage} damage");
+                    Console.WriteLine($"Your player name is: {player.Name}, health is {player.Health}, gold amount is {player.Gold}, and you deal {player.Damage} damage");
                     Console.WriteLine("Enter Yes to play!");
                     playerStart = Console.ReadLine().ToLower();
                     startScreen = false;

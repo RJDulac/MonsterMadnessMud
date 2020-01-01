@@ -44,7 +44,9 @@ public class Combat
             if (selectedMonster.Health == 0)
             {
                 selectedMonster.SetHealth(monsterFullHealth);
-                Console.WriteLine($"You have slain {selectedMonster.Name}!");
+                Player.GoldReward(20);
+                Console.WriteLine($"You have slain {selectedMonster.Name} and earned 20 gold!");
+                Player.Info();
                 combatPlaying = false;
             }
             if (Player.Health == 0)
