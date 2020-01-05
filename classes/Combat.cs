@@ -35,11 +35,11 @@ public class Combat
                 Console.WriteLine("----------------------------------\n");
                 Console.WriteLine("Player's turn \n");
                 //player attack waits
-                Task.WaitAll(Attack(600));
+                Task.WaitAll(Wait(800));
                 Console.WriteLine($"You attack {selectedMonster.Name} for {Player.Damage} damage!\n");
                 selectedMonster.TakesDamage(Player.Damage);
                 //wait to show health
-                Task.WaitAll(Attack(800));
+                Task.WaitAll(Wait(1200));
                 Console.WriteLine($"{selectedMonster.Name} is left with {selectedMonster.Health} health!\n");
                 storeInput = Console.ReadLine().ToLower();
                 //go to shop
@@ -56,11 +56,11 @@ public class Combat
                 Console.WriteLine("----------------------------------\n");
                 Console.WriteLine("Monster's turn\n");
                 //monster attack waits
-                Task.WaitAll(Attack(600));
+                Task.WaitAll(Wait(800));
                 Console.WriteLine($"{selectedMonster.Name} attacks you for {selectedMonster.Damage} damage!\n");
                 Player.TakesDamage(selectedMonster.Damage);
                 //wait to show health
-                Task.WaitAll(Attack(800));
+                Task.WaitAll(Wait(1200));
                 Console.WriteLine($"You have {Player.Health} health left!");
                 Console.ReadLine();
                 playerTurn = true;
@@ -81,12 +81,12 @@ public class Combat
             }
         }
     }
-    public static async Task Attack(int duration)
+    public static async Task Wait(int duration)
     {
-        await AttackDelay(duration);
+        await WaitDelay(duration);
         //Console.WriteLine("Attacks");
     }
-    public static async Task<int> AttackDelay(int duration)
+    public static async Task<int> WaitDelay(int duration)
     {
         await Task.Delay(duration);
         return 1;

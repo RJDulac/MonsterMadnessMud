@@ -36,15 +36,17 @@ namespace mud
                 if (startScreen == true)
                 {
 
-                    Console.WriteLine("Game Started");
+                    Console.WriteLine("Game Started\n");
+                    Console.WriteLine("----------------------------------\n");
                     //create player
-                    Console.WriteLine("Choose your name!");
+                    Console.WriteLine("Choose your name!\n");
                     string input = Console.ReadLine();
                     player.GiveName(input);
 
 
-                    Console.WriteLine($"Your player name is: {player.Name}, health is {player.Health}, gold amount is {player.Gold}, and you deal {player.Damage} damage");
-                    Console.WriteLine("Enter Yes to play!");
+                    Console.WriteLine($"Your player name is: {player.Name}, health is {player.Health}, gold amount is {player.Gold}, and you deal {player.Damage} damage\n");
+                    Console.WriteLine("----------------------------------\n");
+                    Console.WriteLine("Enter Yes to play!\n");
                     playerStart = Console.ReadLine().ToLower();
                     startScreen = false;
                 }
@@ -53,6 +55,7 @@ namespace mud
             {
                 if (player.Health <= 0)
                 {
+                    Console.WriteLine("----------------------------------\n");
                     Console.WriteLine("Game ended");
 
                     playing = false;
