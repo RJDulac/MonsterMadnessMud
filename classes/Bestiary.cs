@@ -6,7 +6,6 @@ public class Bestiary
 
     public Monsters[] MonsterGroup()
     {
-        Combat combat = new Combat();
 
         Monsters goblin = new Monsters("Goblin", 40, rnd.Next(7, 10));
         Monsters orc = new Monsters("Orc", 50, rnd.Next(8, 15));
