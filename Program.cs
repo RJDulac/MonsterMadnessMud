@@ -12,10 +12,8 @@ namespace mud
 
             //player
             Player player = new Player("");
-            //monsters
-            Bestiary beasts = new Bestiary();
-            //beasts.DisplayBestiary();
-            Combat combat = new Combat(beasts, player);
+
+            Combat combat = new Combat(player);
             while (playing == true)
             {
                 StartScreen();
