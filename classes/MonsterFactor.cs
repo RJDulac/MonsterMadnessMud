@@ -1,11 +1,9 @@
 using System;
-
 class MonsterFactory
 {
-
     public static Monsters GetRandomMonster()
     {
-        int randomNumber = new Random().Next(1, 5);
+        int randomNumber = new Random().Next(5);
         switch (randomNumber)
         {
             case 1:
@@ -16,9 +14,8 @@ class MonsterFactory
                 return new Monsters("Dragon", 100, new Random().Next(10, 12));
             case 4:
                 return new Monsters("Golem", 120, new Random().Next(6, 12));
-            case 5:
+            default:
                 return new Monsters("Witch");
         }
-        return new Monsters("NULL");
     }
 }
